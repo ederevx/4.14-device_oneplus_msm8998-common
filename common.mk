@@ -160,7 +160,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gralloc.msm8998 \
     hwcomposer.qcom \
-    libdisplayconfig \
     libqdMetaData.system \
     libtinyxml \
     vendor.qti.hardware.memtrack-service \
@@ -485,11 +484,6 @@ PRODUCT_COPY_FILES += \
 # TARGET_USES_GRALLOC4 is not explicitly set to `false`:
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor
-
-PRODUCT_PACKAGES += \
-    vendor.display.config@1.10 \
-    vendor.display.config@1.10_vendor \
-    vendor.qti.hardware.display.composer-service
 
 # Display properties
 PRODUCT_PROPERTY_OVERRIDES += \
