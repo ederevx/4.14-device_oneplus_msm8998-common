@@ -162,7 +162,6 @@ PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-service \
     gralloc.msm8998 \
     hwcomposer.msm8998 \
-    libdisplayconfig \
     libqdMetaData.system \
     libtinyxml \
     memtrack.msm8998 \
@@ -487,11 +486,6 @@ PRODUCT_COPY_FILES += \
 # TARGET_USES_GRALLOC4 is not explicitly set to `false`:
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor
-
-PRODUCT_PACKAGES += \
-    vendor.display.config@1.10 \
-    vendor.display.config@1.10_vendor \
-    vendor.qti.hardware.display.composer-service
 
 # Display properties
 PRODUCT_PROPERTY_OVERRIDES += \
