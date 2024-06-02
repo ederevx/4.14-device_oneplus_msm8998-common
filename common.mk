@@ -515,9 +515,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml
 
 # Rising flags
-RISING_CHIPSET := msm8998
-RISING_MAINTAINER := forkbomb9
-TARGET_BUILD_APERTURE_CAMERA := true
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RISING_CHIPSET="Qualcomm Snapdragon 835" \
+    RISING_MAINTAINER="ederevx"
+
 TARGET_ENABLE_BLUR := true
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_BOOT_ANIMATION_RES := 1080
+PRODUCT_NO_CAMERA := false
