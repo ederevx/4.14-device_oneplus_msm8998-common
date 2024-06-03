@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.yaap.device.DeviceSettings;
+package com.android.device.DeviceSettings;
 
 import android.database.Cursor;
 import android.database.MatrixCursor;
