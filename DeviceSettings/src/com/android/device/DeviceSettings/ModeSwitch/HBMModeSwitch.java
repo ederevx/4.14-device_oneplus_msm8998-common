@@ -1,5 +1,5 @@
 /*
-* Copyright (C) 2018 The OmniROM Project
+* Copyright (C) 2016 The OmniROM Project
 *
 * This program is free software: you can redistribute it and/or modify
 * it under the terms of the GNU General Public License as published by
@@ -15,19 +15,26 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.yaap.device.DeviceSettings;
+package com.android.device.DeviceSettings.ModeSwitch;
 
-import android.app.Activity;
-import android.os.Bundle;
+import com.android.device.DeviceSettings.Utils;
 
-public class PanelSettingsActivity extends Activity {
+public class HBMModeSwitch {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    private static final String FILE = "/sys/devices/virtual/graphics/fb0/hbm";
 
-        getFragmentManager().beginTransaction()
-                .add(android.R.id.content, new PanelSettings())
-                .commit();
+    public static String getFile() {
+        if (Utils.fileWritable(FILE)) {
+            return FILE;
+        }
+        return null;
+    }
+
+    public static boolean isSupported() {
+        return Utils.fileWritable(getFile());
+    }
+
+    public static boolean isCurrentlyEnabled() {
+        return Utils.getFileValueAsBoolean(getFile(), false);
     }
 }

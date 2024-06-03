@@ -15,18 +15,22 @@
 * along with this program. If not, see <http://www.gnu.org/licenses/>.
 *
 */
-package com.yaap.device.DeviceSettings;
+package com.android.device.DeviceSettings;
 
-import android.content.SharedPreferences;
-import android.graphics.drawable.Icon;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
 
-import com.yaap.device.DeviceSettings.ModeSwitch.DCModeSwitch;
+import java.lang.IllegalArgumentException;
 
-public class DCModeTileService extends TileService {
-    private boolean enabled = false;
+import com.android.device.DeviceSettings.ModeSwitch.HBMModeSwitch;
+
+public class HBMModeTileService extends TileService {
+
+    private Intent mHbmIntent;
 
     @Override
     public void onDestroy() {
@@ -40,18 +44,14 @@ public class DCModeTileService extends TileService {
 
     @Override
     public void onTileRemoved() {
+        tryStopService();
         super.onTileRemoved();
     }
 
     @Override
     public void onStartListening() {
         super.onStartListening();
-        enabled = DCModeSwitch.isCurrentlyEnabled();
-        getQsTile().setIcon(Icon.createWithResource(this,
-                    enabled ? R.drawable.ic_dimming_on : R.drawable.ic_dimming_off));
-        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        getQsTile().updateTile();
-
+        updateState();
     }
 
     @Override
@@ -62,14 +62,27 @@ public class DCModeTileService extends TileService {
     @Override
     public void onClick() {
         super.onClick();
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        enabled = DCModeSwitch.isCurrentlyEnabled();
-        Utils.writeValue(DCModeSwitch.getFile(), enabled ? "0" : "1");
-        sharedPrefs.edit().putBoolean(DeviceSettings.KEY_DC_SWITCH, !enabled).commit();
-        //getQsTile().setLabel(enabled ? "DC off" : "DC On");
-        getQsTile().setIcon(Icon.createWithResource(this,
-                    enabled ? R.drawable.ic_dimming_off : R.drawable.ic_dimming_on));
-        getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
+        boolean enabled = HBMModeSwitch.isCurrentlyEnabled();
+        // NOTE: reverse logic, enabled reflects the state before press
+        Utils.writeValue(HBMModeSwitch.getFile(), enabled ? "0" : "5");
+        if (!enabled) {
+            mHbmIntent = new Intent(this,
+                    com.android.device.DeviceSettings.HBMModeService.class);
+            this.startService(mHbmIntent);
+        }
+        updateState();
+    }
+
+    private void updateState() {
+        boolean enabled = HBMModeSwitch.isCurrentlyEnabled();
+        if (!enabled) tryStopService();
+        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
         getQsTile().updateTile();
+    }
+
+    private void tryStopService() {
+        if (mHbmIntent == null) return;
+        this.stopService(mHbmIntent);
+        mHbmIntent = null;
     }
 }
