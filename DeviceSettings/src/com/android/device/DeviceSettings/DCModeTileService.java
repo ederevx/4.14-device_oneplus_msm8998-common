@@ -46,12 +46,7 @@ public class DCModeTileService extends TileService {
     @Override
     public void onStartListening() {
         super.onStartListening();
-        enabled = DCModeSwitch.isCurrentlyEnabled();
-        getQsTile().setIcon(Icon.createWithResource(this,
-                    enabled ? R.drawable.ic_dimming_on : R.drawable.ic_dimming_off));
-        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        getQsTile().updateTile();
-
+        updateState();
     }
 
     @Override
@@ -66,10 +61,14 @@ public class DCModeTileService extends TileService {
         enabled = DCModeSwitch.isCurrentlyEnabled();
         Utils.writeValue(DCModeSwitch.getFile(), enabled ? "0" : "1");
         sharedPrefs.edit().putBoolean(DeviceSettings.KEY_DC_SWITCH, !enabled).commit();
-        //getQsTile().setLabel(enabled ? "DC off" : "DC On");
-        getQsTile().setIcon(Icon.createWithResource(this,
-                    enabled ? R.drawable.ic_dimming_off : R.drawable.ic_dimming_on));
-        getQsTile().setState(enabled ? Tile.STATE_INACTIVE : Tile.STATE_ACTIVE);
-        getQsTile().updateTile();
+        updateState();
     }
+
+    private void updateState() {
+        enabled = DCModeSwitch.isCurrentlyEnabled();
+        getQsTile().setIcon(Icon.createWithResource(this,
+                    enabled ? R.drawable.ic_dimming_on : R.drawable.ic_dimming_off));
+        getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+        getQsTile().updateTile();
+	}
 }

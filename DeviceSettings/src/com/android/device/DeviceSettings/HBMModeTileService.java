@@ -17,20 +17,16 @@
 */
 package com.android.device.DeviceSettings;
 
-import android.content.BroadcastReceiver;
-import android.content.Context;
-import android.content.Intent;
+import android.content.SharedPreferences;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
 import androidx.preference.PreferenceManager;
 
-import java.lang.IllegalArgumentException;
 
 import com.android.device.DeviceSettings.ModeSwitch.HBMModeSwitch;
 
 public class HBMModeTileService extends TileService {
-
-    private Intent mHbmIntent;
+    private boolean enabled = false;
 
     @Override
     public void onDestroy() {
@@ -44,7 +40,6 @@ public class HBMModeTileService extends TileService {
 
     @Override
     public void onTileRemoved() {
-        tryStopService();
         super.onTileRemoved();
     }
 
@@ -62,27 +57,16 @@ public class HBMModeTileService extends TileService {
     @Override
     public void onClick() {
         super.onClick();
-        boolean enabled = HBMModeSwitch.isCurrentlyEnabled();
-        // NOTE: reverse logic, enabled reflects the state before press
-        Utils.writeValue(HBMModeSwitch.getFile(), enabled ? "0" : "5");
-        if (!enabled) {
-            mHbmIntent = new Intent(this,
-                    com.android.device.DeviceSettings.HBMModeService.class);
-            this.startService(mHbmIntent);
-        }
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        enabled = HBMModeSwitch.isCurrentlyEnabled();
+        Utils.writeValue(HBMModeSwitch.getFile(), enabled ? "0" : "1");
+        sharedPrefs.edit().putBoolean(DeviceSettings.KEY_HBM_SWITCH, !enabled).commit();
         updateState();
     }
 
     private void updateState() {
-        boolean enabled = HBMModeSwitch.isCurrentlyEnabled();
-        if (!enabled) tryStopService();
+        enabled = HBMModeSwitch.isCurrentlyEnabled();
         getQsTile().setState(enabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
         getQsTile().updateTile();
-    }
-
-    private void tryStopService() {
-        if (mHbmIntent == null) return;
-        this.stopService(mHbmIntent);
-        mHbmIntent = null;
     }
 }

@@ -17,9 +17,12 @@
 */
 package com.android.device.DeviceSettings.ModeSwitch;
 
+import androidx.preference.Preference;
+import androidx.preference.Preference.OnPreferenceChangeListener;
+
 import com.android.device.DeviceSettings.Utils;
 
-public class HBMModeSwitch {
+public class HBMModeSwitch implements OnPreferenceChangeListener {
 
     private static final String FILE = "/sys/devices/virtual/graphics/fb0/hbm";
 
@@ -36,5 +39,12 @@ public class HBMModeSwitch {
 
     public static boolean isCurrentlyEnabled() {
         return Utils.getFileValueAsBoolean(getFile(), false);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        Boolean enabled = (Boolean) newValue;
+        Utils.writeValue(getFile(), enabled ? "1" : "0");
+        return true;
     }
 }
