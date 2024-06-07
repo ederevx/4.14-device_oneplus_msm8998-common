@@ -22,8 +22,7 @@
         <SwitchPreference
             android:key="hbm"
             android:summary="@string/hbm_mode_summary"
-            android:title="@string/hbm_mode_title"
-            android:defaultValue="false" />
+            android:title="@string/hbm_mode_title" />
 
         <SwitchPreference
             android:key="fps_info"
@@ -90,6 +89,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory 
+        android:key="button_swap_category"
         android:title="@string/button_dashboard_summary">
 
         <SwitchPreference
