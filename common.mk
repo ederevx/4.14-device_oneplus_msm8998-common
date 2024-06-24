@@ -271,6 +271,9 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl \
     android.hardware.keymaster@3.0-service
 
+# Keys
+include vendor/lineage-priv/keys/keys.mk
+
 # Keys migration
 PRODUCT_COPY_FILES += \
     vendor/lineage-priv/keys_migration.sh:$(TARGET_COPY_OUT_SYSTEM)/bin/keys_migration.sh
