@@ -542,13 +542,3 @@ service vendor.ipacm /vendor/bin/ipacm
     class main
     user radio
     group radio inet
-
-on early-init
-    start keys_migration
-
-service keys_migration /system/bin/keys_migration.sh
-    user root
-    group system
-    oneshot
-    disabled
-    seclabel u:r:toolbox:s0
