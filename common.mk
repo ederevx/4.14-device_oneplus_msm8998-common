@@ -151,7 +151,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.6:64 \
     libstdc++_vendor \
-    vendor.qti.hardware.camera.device@1.0
+    vendor.qti.hardware.camera.device@1.0 \
+    Camera
 
 # Configstore
 PRODUCT_PACKAGES += \
