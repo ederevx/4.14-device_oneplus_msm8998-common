@@ -12,8 +12,12 @@ LOCAL_PRIVATE_PLATFORM_APIS := true
 LOCAL_PRIVILEGED_MODULE := true
 LOCAL_SYSTEM_EXT_MODULE := true
 
+LOCAL_OPTIONAL_USES_LIBRARIES := \
+    androidx.window.extensions \
+    androidx.window.sidecar
+
 LOCAL_STATIC_JAVA_LIBRARIES := \
-    org.lineageos.platform.internal
+    VendorSupport-preference
 
 LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 
