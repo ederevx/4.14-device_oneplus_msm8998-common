@@ -14,8 +14,13 @@ android_app {
     privileged: true,
     system_ext_specific: true,
 
+    optional_uses_libs: [
+        "androidx.window.extensions",
+        "androidx.window.sidecar",
+    ],
+
     static_libs: [
-        "org.lineageos.platform.internal",
+        "VendorSupport-preference",
     ],
 
     optimize: {
