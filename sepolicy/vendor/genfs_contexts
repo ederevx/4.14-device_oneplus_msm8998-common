@@ -11,6 +11,7 @@ genfscon sysfs /project_info           u:object_r:sysfs_project_info:s0
 # Touchpanel
 genfscon proc /touchpanel              u:object_r:proc_touchpanel:s0
 genfscon proc /tri-state-key           u:object_r:proc_touchpanel:s0
+genfscon proc /s1302/key_rep           u:object_r:proc_touchpanel:s0
 
 # Display
 genfscon proc /flicker_free                                          u:object_r:proc_flicker_free:s0
