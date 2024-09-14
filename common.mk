@@ -372,6 +372,9 @@ PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE := true
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/sysconfig/qti_whitelist.xml
 
+# Get Qcom components
+TARGET_BOARD_PLATFORM := msm8998
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson
