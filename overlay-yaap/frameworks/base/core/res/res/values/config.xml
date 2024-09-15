@@ -76,4 +76,7 @@
     <!-- Disable livedisplay -->
     <bool name="config_enableLiveDisplay">false</bool>
 
+    <!-- Does the device have a notification led -->
+    <bool name="config_hasNotificationLed">true</bool>
+
 </resources>
