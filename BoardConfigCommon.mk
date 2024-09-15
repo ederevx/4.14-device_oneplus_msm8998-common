@@ -75,9 +75,6 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
-# Filesystem
-TARGET_FS_CONFIG_GEN += $(PLATFORM_PATH)/config.fs
-
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(PLATFORM_PATH)/framework_compatibility_matrix.xml \
