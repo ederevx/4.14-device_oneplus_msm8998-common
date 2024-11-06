@@ -529,9 +529,21 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml
 
 # Rising flags
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    RISING_CHIPSET="Qualcomm Snapdragon 835" \
-    RISING_MAINTAINER="ederevx"
 
+# Lunch banner maintainer variable
+RISING_MAINTAINER="ederevx"
+
+# Chipset/Maintainer properties (ro.rising.chipset/ro.rising.maintainer) 
+# (Optional if builder is setting properties via init_<device>.cpp)
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    RisingChipset="Qualcomm Snapdragon 835" \
+    RisingMaintainer="ederevx"
+
+# disable/enable blur support, default is false
 TARGET_ENABLE_BLUR := true
+
+# whether to ship aperture camera, default is false
 PRODUCT_NO_CAMERA := false
+
+# Wether to ship lawnchair launcher
+TARGET_PREBUILT_LAWNCHAIR_LAUNCHER := false 
