@@ -32,8 +32,4 @@
     <string name="off_mode_title">Apagado</string>
     <string name="tile_panel_mode">Modos de panel</string>
     <string name="tile_hbm_mode">Modos de alto brillo</string>
-    <!-- Vibration control -->
-    <string name="category_vibrator">Vibrador</string>
-    <string name="vib_strength_title_head">Intensidad del sistema</string>
-    <string name="vib_strength_summary_head">Definir la intensidad de la vibración</string>
 </resources>

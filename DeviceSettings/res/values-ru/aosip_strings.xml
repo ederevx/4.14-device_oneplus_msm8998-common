@@ -32,8 +32,4 @@
     <string name="off_mode_title">Выкл</string>
     <string name="tile_panel_mode">Режим панелей</string>
     <string name="tile_hbm_mode">Режимы высокой яркости</string>
-    <!-- Vibration control -->
-    <string name="category_vibrator">Вибрация</string>
-    <string name="vib_strength_title_head">Общая</string>
-    <string name="vib_strength_summary_head">Установить интенсивность общей вибрации</string>
 </resources>

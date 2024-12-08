@@ -32,8 +32,4 @@
     <string name="off_mode_title">Disattivato</string>
     <string name="tile_panel_mode">Modalità schermo</string>
     <string name="tile_hbm_mode">Modalità alta luminosità</string>
-    <!-- Vibration control -->
-    <string name="category_vibrator">Vibrazione</string>
-    <string name="vib_strength_title_head">Intensità di sistema</string>
-    <string name="vib_strength_summary_head">Imposta l\'intensità della vibrazione</string>
 </resources>

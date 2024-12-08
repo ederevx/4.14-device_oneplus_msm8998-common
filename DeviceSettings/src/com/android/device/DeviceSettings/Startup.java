@@ -55,7 +55,6 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
-        VibratorStrengthPreference.restore(context);
 
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_BUTTON_SWAP, false);
         restore(ButtonSwap.getFile(), enabled);

@@ -32,8 +32,4 @@
     <string name="off_mode_title">Wyłącz</string>
     <string name="tile_panel_mode">Tryby panelu</string>
     <string name="tile_hbm_mode">Tryb wysokiej jasności</string>
-    <!-- Vibration control -->
-    <string name="category_vibrator">Wibracje</string>
-    <string name="vib_strength_title_head">Siła wibracji</string>
-    <string name="vib_strength_summary_head">Zdefiniuj siłę wibracji</string>
 </resources>
