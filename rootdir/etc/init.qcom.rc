@@ -203,10 +203,6 @@ on late-fs
     # Mount RW partitions which need to run fsck
     mount_all /vendor/etc/fstab.qcom --late
 
-    # Vibrator permissions
-    chown system system /sys/class/leds/vibrator/vmax_mv
-    chmod 0660 /sys/class/leds/vibrator/vmax_mv
-
 on zygote-start
     write /dev/cpuctl/system/cpu.uclamp.min 0
 
