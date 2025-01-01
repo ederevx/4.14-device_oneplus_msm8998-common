@@ -518,3 +518,12 @@ PRODUCT_PACKAGES += \
 # RmNet xml config file
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/data/netmgr_config.xml:$(TARGET_COPY_OUT_VENDOR)/etc/data/netmgr_config.xml
+
+# Boot animation Res
+TARGET_BOOT_ANIMATION_RES := 1080
+# Maintainer
+MATRIXX_MAINTAINER := ederevx
+# Support call recording on Google Dialer
+TARGET_SUPPORTS_CALL_RECORDING := true
+# Ship with Blur
+TARGET_ENABLE_BLUR := true
