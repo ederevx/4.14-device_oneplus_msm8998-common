@@ -186,7 +186,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.2.vendor \
     android.hardware.drm-service.clearkey \
-    libcrypto_shim.vendor
+    libcrypto_shim
 
 # Dynamic Partitions
 PRODUCT_BUILD_SUPER_PARTITION := false
