@@ -170,7 +170,7 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    gralloc.msm8998 \
+    gralloc.qcom \
     hwcomposer.qcom \
     libdisplayconfig \
     libqdMetaData.system \
