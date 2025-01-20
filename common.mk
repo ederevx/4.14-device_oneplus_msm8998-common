@@ -505,8 +505,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vendor.display.config@1.10 \
-    vendor.display.config@1.10.vendor \
-    vendor.qti.hardware.display.composer-service.xml
+    vendor.display.config@1.10.vendor
 
 # Display properties
 PRODUCT_PROPERTY_OVERRIDES += \
