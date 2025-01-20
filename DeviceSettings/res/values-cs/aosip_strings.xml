@@ -32,4 +32,8 @@
     <string name="off_mode_title">Vyp.</string>
     <string name="tile_panel_mode">Režimy panelu</string>
     <string name="tile_hbm_mode">Režimy vysokého jasu</string>
+    <!-- Vibration control -->
+    <string name="category_vibrator">Vibrace</string>
+    <string name="vib_strength_title_head">Síla systémových vibrací</string>
+    <string name="vib_strength_summary_head">Definovat sílu vibrací</string>
 </resources>

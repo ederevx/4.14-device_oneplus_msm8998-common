@@ -59,10 +59,15 @@ public class DeviceSettings extends PreferenceFragment
     private SwitchPreference mDCModeSwitch;
     private SwitchPreference mHBMModeSwitch;
     private SwitchPreference mFpsInfo;
+    private VibratorStrengthPreference mVibratorStrength;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
         addPreferencesFromResource(R.xml.main);
+
+        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
+        if (mVibratorStrength != null)
+            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
 
         mDCModeSwitch = findPreference(KEY_DC_SWITCH);
         mDCModeSwitch.setEnabled(DCModeSwitch.isSupported());
