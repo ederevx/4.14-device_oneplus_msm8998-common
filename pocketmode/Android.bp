@@ -20,7 +20,7 @@ android_app {
     ],
 
     static_libs: [
-        "VendorSupport-preference",
+        "framework-derpfest.static",
     ],
 
     optimize: {
