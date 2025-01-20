@@ -33,6 +33,12 @@
     <string name="tile_panel_mode">Panel modları</string>
     <string name="tile_hbm_mode">Yüksek parlaklık modları</string>
 
+    <!-- Vibration control -->
+    <string name="category_vibrator">Titreşim</string>
+    <string name="vib_strength_title_head">Sistem yoğunluğu</string>
+    <string name="vib_strength_summary_head">Titreşim yoğunluğunu tanımlayın</string>
+    <string name="vibration_warning">Titreşimin çok yüksek ayarlanması kalıcı donanım hasarına neden olabilir</string>
+
     <!-- FPS overlay -->
     <string name="fps_info_title">FPS Katmanı</string>
     <string name="fps_info_summary">Mevcut kare sayısını (FPS) göster</string>

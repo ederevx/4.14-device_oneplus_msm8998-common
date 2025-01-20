@@ -58,4 +58,18 @@
             android:title="@string/disableChargerVoltageCheck_title"
             android:summary="@string/disableChargerVoltageCheck_summary" />
     </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="vibrator"
+        android:title="@string/category_vibrator">
+
+        <com.android.device.DeviceSettings.VibratorStrengthPreference
+            android:key="vib_strength"
+            android:title="@string/vib_strength_title_head"
+            android:summary="@string/vib_strength_summary_head" />
+        <Preference
+            android:icon="@drawable/ic_info_outline_24dp"
+            android:persistent="false"
+            android:summary="@string/vibration_warning" />
+    </PreferenceCategory>
 </PreferenceScreen>
