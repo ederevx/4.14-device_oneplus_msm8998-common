@@ -172,7 +172,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gralloc.msm8998 \
     hwcomposer.qcom \
-    libdisplayconfig \
+    libdisplayconfig.system.qti \
     libqdMetaData.system \
     libtinyxml \
     vendor.qti.hardware.memtrack-service \
@@ -505,8 +505,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     vendor.display.config@1.10 \
-    vendor.display.config@1.10_vendor \
-    vendor.qti.hardware.display.composer-service
+    vendor.display.config@1.10.vendor \
+    vendor.qti.hardware.display.composer-service.xml
 
 # Display properties
 PRODUCT_PROPERTY_OVERRIDES += \
