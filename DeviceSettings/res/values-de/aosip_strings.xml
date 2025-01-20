@@ -62,7 +62,6 @@
     <string name="touchscreen_gesture_action_dialog_title">Gestenaktion</string>
     <string name="touchscreen_gesture_action_do_nothing">Nichts tun</string>
     <string name="touchscreen_gesture_action_flashlight">Taschenlampe ein-/ausschalten</string>
-    <string name="touchscreen_gesture_action_camera">Kamera öffnen</string>
     <string name="touchscreen_gesture_action_browser">Browser öffnen</string>
     <string name="touchscreen_gesture_action_dialer">Telefon-App öffnen</string>
     <string name="touchscreen_gesture_action_email">E-Mails anzeigen</string>

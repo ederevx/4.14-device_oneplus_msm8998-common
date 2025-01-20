@@ -61,7 +61,6 @@
     <string name="touchscreen_gesture_action_dialog_title">Hareket eylemi</string>
     <string name="touchscreen_gesture_action_do_nothing">Hiçbir şey yapma</string>
     <string name="touchscreen_gesture_action_flashlight">El fenerini aç/kapat</string>
-    <string name="touchscreen_gesture_action_camera">Kamerayı aç</string>
     <string name="touchscreen_gesture_action_browser">Web tarayıcısını aç</string>
     <string name="touchscreen_gesture_action_dialer">Telefon uygulamasını aç</string>
     <string name="touchscreen_gesture_action_email">E-postalarını görüntüle</string>

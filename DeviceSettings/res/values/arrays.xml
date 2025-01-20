@@ -19,7 +19,6 @@
     <string-array name="touchscreen_gesture_action_entries">
         <item>@string/touchscreen_gesture_action_do_nothing</item>
         <item>@string/touchscreen_gesture_action_flashlight</item>
-        <item>@string/touchscreen_gesture_action_camera</item>
         <item>@string/touchscreen_gesture_action_browser</item>
         <item>@string/touchscreen_gesture_action_dialer</item>
         <item>@string/touchscreen_gesture_action_email</item>
