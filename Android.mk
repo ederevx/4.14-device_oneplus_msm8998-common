@@ -21,4 +21,7 @@ super_dummyimage: $(INSTALLED_SUPERIMAGE_DUMMY_TARGET)
 
 INSTALLED_RADIOIMAGE_TARGET += $(INSTALLED_SUPERIMAGE_DUMMY_TARGET)
 
+# Import local hardware/qcom-caf makefile to configure dependencies
+include $(LOCAL_PATH)/hardware/qcom-caf/Android.mk
+
 endif
