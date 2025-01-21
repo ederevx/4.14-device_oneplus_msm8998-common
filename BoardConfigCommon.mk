@@ -57,7 +57,7 @@ USE_DEVICE_SPECIFIC_MEDIA := true
 DEVICE_SPECIFIC_AUDIO_PATH := $(PLATFORM_PATH)/hardware/qcom-caf/audio
 DEVICE_SPECIFIC_DISPLAY_PATH := $(PLATFORM_PATH)/hardware/qcom-caf/display
 DEVICE_SPECIFIC_MEDIA_PATH := $(PLATFORM_PATH)/hardware/qcom-caf/media
-QCOM_SOONG_NAMESPACE := $(PLATFORM_PATH)/hardware/qcom-caf/
+QCOM_SOONG_NAMESPACE := $(PLATFORM_PATH)/hardware/qcom-caf
 
 # A/B
 AB_OTA_UPDATER := false
