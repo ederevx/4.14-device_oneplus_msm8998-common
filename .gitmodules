@@ -1,9 +1,9 @@
-[submodule "qcom-caf/audio"]
-	path = hardware/qcom-caf/audio
-	url = git@github.com:ederevx/hardware_qcom_audio.git
-[submodule "qcom-caf/display"]
-	path = hardware/qcom-caf/display
-	url = git@github.com:ederevx/hardware_qcom_display.git
-[submodule "qcom-caf/media"]
+[submodule "hardware/qcom-caf/media"]
 	path = hardware/qcom-caf/media
 	url = git@github.com:ederevx/hardware_qcom_media.git
+[submodule "hardware/qcom-caf/display"]
+	path = hardware/qcom-caf/display
+	url = git@github.com:ederevx/hardware_qcom_display.git
+[submodule "hardware/qcom-caf/audio"]
+	path = hardware/qcom-caf/audio
+	url = git@github.com:ederevx/hardware_qcom_audio.git
